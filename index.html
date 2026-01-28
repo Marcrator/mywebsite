@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My First Web Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #74ebd5, #acb6e5);
+            text-align: center;
+            padding-top: 50px;
+        }
+        h1 {
+            color: #1f2a44;
+        }
+        p {
+            color: #333;
+            font-size: 16px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: navy;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .btn:hover {
+            background-color: #333;
+        }
+
+        /* Center table and contents */
+        table {
+            margin: auto;       /* centers table horizontally */
+            border-collapse: collapse;
+        }
+
+        td {
+            text-align: center;     /* centers image and text inside cell */
+            vertical-align: middle;
+            padding: 10px;
+        }
+
+        td img {
+            width: 250px;
+            height: 170px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello, World!</h1>
+    <p>PERSONAL LIST.</p>
+
+    <h3>Actor</h3>
+    <table>
+        <tr>
+            <td>
+                <a href="https://en.wikipedia.org/wiki/Ana_de_Armas" onclick="showModal('Ana de Armas', 'Famous actress known for Blade Runner 2049 and No Time To Die.')">
+                    <img src="Images/Anna.jpg" alt="Ana de Armas"><br>
+                    Ana de Armas
+                </a>
+            </td>
+            <td>
+                <a href="https://en.wikipedia.org/wiki/Chris_Evans_(actor)" onclick="showModal('Chris Evans', 'Actor known for Captain America.')">
+                    <img src="Images/Evans.jpg" alt="Chris Evans"><br>
+                    Chris Evans
+                </a>
+            </td>
+            <td>
+                <a href="https://en.wikipedia.org/wiki/Tom_Cruise" onclick="showModal('Tom Cruise', 'Famous actor known for Mission Impossible series.')">
+                    <img src="Images/Cruise.jpg" alt="Tom Cruise"><br>
+                    Tom Cruise
+                </a>
+            </td>
+        </tr>
+    </table>
+	<h3>Me</h3>
+<table cellpadding="10" cellspacing="0">
+<tr>
+    <td>
+	<a href="https://www.facebook.com/Edmark.Benarao.29" onclick="showModal('Edmark', 'Normal Human.')">
+                    <img src="Images/Ako.jpg" alt="Tom Cruise"><br>
+                    Edmark Benarao
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="item-name"></h2>
+            <p id="item-ingredients"></p>
+        </div>
+    </div>
+
+    <script>
+        function showModal(name, description) {
+            const modal = document.getElementById("myModal");
+            document.getElementById("item-name").innerText = name;
+            document.getElementById("item-ingredients").innerText = description;
+            modal.style.display = "block";
+
+            // Optional: close modal automatically after 3 seconds
+            setTimeout(function() {
+                modal.style.display = "none";
+            }, 3000);
+        }
+
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if(event.target == document.getElementById("myModal")) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>
+
+
